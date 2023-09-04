@@ -8,7 +8,7 @@ from app import app
 from models import db, Bakery, BakedGood
 
 fake = Faker()
-
+print("🌱 Seeding DB...")
 with app.app_context():
 
     BakedGood.query.delete()
@@ -47,3 +47,4 @@ with app.app_context():
     most_expensive_baked_good.price = 100
     db.session.add(most_expensive_baked_good)
     db.session.commit()
+print("✅ Done seeding!")
